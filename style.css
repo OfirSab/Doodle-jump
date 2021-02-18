@@ -1,3 +1,7 @@
+body{
+    margin: auto;
+}
+
 .grid{
     width: 400px;
     height: 600px;
@@ -20,3 +24,24 @@
     background-image: url('platform.png');
     position:absolute;
 }
+.start-new-btn:before{
+    font-family: Chalkduster, fantasy;
+    content:"Retry"; 
+    background-color: green;
+    border: 0px;
+    padding: 16px 32px;
+    position: center;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+.start-new-btn:active {
+    opacity: 0.7;
+    transition: 0.1s;
+    transform: translateY(3px);
+  }

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     const doodler = document.createElement('div');
+    const newGame = document.createElement('div');
 
     let doodlerLeftSpace = 50;
     let startPoint = 150
@@ -96,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     (doodlerLeftSpace <= (platform.left + 85)) &&
                     !isJumping
                 ) {
-                    console.log('landed');
                     startPoint = doodlerLeftSpace
                     jump()
                 }
@@ -119,6 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(downTimerId)
         clearInterval(leftTimerId)
         clearInterval(rightTimerId)
+        grid.appendChild(newGame)
+        newGame.classList.add('start-new-btn');
+    }
+    function startNewGame() {
+        grid.appendChild(newGame)
+        doodler.classList.add('start-new-btn:before');
     }
     function control(e) {
         if (e.key === "ArrowLeft") {
@@ -167,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function start() {
+
         if (!isGameOver) {
             createPlatforms()
             createDoodler()
@@ -174,6 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
             setInterval(movePlatforms, 30)
             jump()
             document.addEventListener('keyup', control)
+        }
+        else {
+
         }
 
     }
